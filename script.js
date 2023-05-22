@@ -7,7 +7,7 @@ const d = document,
 
 const getPokemon = async () => {
   try {
-    for (let i = 1; i <= 50; i++) {
+    for (let i = 1; i <= 15; i++) {
       let res = await fetch(`https://pokeapi.co/api/v2/pokemon/${i}/`),
         json = await res.json();
 
@@ -33,17 +33,7 @@ const getPokemon = async () => {
   }
 };
 
-const showStats = () => {
-  //console.log(d.querySelector(".pokemon-name").textContent);
-};
-
 d.addEventListener("DOMContentLoaded", getPokemon);
-
-d.addEventListener("click", (e) => {
-  if (e.target === d.getElementById("btn")) {
-    console.log(($searchBar.value = "waos"));
-  }
-});
 
 addEventListener("keyup", (e) => {
   let regExp = new RegExp(`${$searchBar.value}`, "gi");
